@@ -23,21 +23,29 @@
    */
   let genreContainer = null;
 
+  let infoContainer = document.querySelector('div.main-trackInfo-container');
+
+  /**
+   * Remove genre injection in the UI
+   */
+  const cleanInjection = () => {
+    if (genreContainer !== null) {
+      try {
+        infoContainer.removeChild(genreContainer);
+      } catch (e) {}
+    }
+  };
+
   /**
    * Inject genres to UI
    */
   const inject = () => {
-    Player.addEventListener('songchange', async () => {
-      if (Player.data.hasOwnProperty('track')) {
+    Player.addEventListener('onprogress', async () => {
+      if (Player.data.track.metadata.hasOwnProperty('artist_uri')) {
         const id = Player.data.track.metadata.artist_uri.split(':')[2];
         const genres = await fetchGenres(id);
 
-        let infoContainer = document.querySelector(
-          'div.main-trackInfo-container'
-        );
-        if (genreContainer !== null) {
-          infoContainer.removeChild(genreContainer);
-        }
+        cleanInjection();
 
         genreContainer = document.createElement('div');
         // noinspection JSUndefinedPropertyAssignment
@@ -51,6 +59,8 @@
         genreContainer.appendChild(span);
 
         infoContainer.appendChild(genreContainer);
+      } else {
+        cleanInjection();
       }
     });
   };
