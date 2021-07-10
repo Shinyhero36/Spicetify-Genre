@@ -1,0 +1,14 @@
+# Makefile
+makefile
+
+# Typescript
+*.d.ts
+
+# Node Modules
+node_modules
+
+# Idea
+.idea
+
+# Crappy JSON Files
+*.json
