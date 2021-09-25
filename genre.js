@@ -26,7 +26,7 @@
    */
   let genreContainer = null;
 
-  let infoContainer = document.querySelector('div.G8ltOBWlM2XsQ9H4eyDY');
+  let infoContainer = document.querySelector('div.main-trackInfo-container');
 
   /**
    * Remove genre injection in the UI
