@@ -1,0 +1,19 @@
+name: Your extension name
+description: Description for your extension
+preview: A path to your preview image. Must be relative to your project root.
+main: The filename for your extension's main js file. Must be relative to your project root.
+readme: The filename for your extension's README file. Must be relative to your project root.
+branch: Optional branch to specify. Will use default branch if none.
+authors: Optional array of authors with names and urls. Will use repo owner if none.
+
+{
+  "name": "Spicetify genre",
+  "description": "Display artist's genre of the current playback",
+  "preview": "preview.png",
+  "main": "genre.js",
+  "readme": "README.md",
+  "branch": "master",
+  "authors": [
+    { "name": "Shinyhero36", "url": "https://github.com/Shinyhero36" }
+  ]
+}
