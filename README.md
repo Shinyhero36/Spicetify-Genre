@@ -1,16 +1,25 @@
 # Spicetify-Genre
 
-Display the artist's genres below current playback information
+Spicetify extension to display the artist's genres below current playback
 
-<!--suppress HtmlDeprecatedAttribute -->
 <p align="center">
   <img alt="preview" src="./preview.png" />
 </p>
 
+---
 
-## Installation
+## Install 
+Copy genre.js into your Spicetify extensions directory:
+| **Platform** | **Path**                                                                               |
+|------------|------------------------------------------------------------------------------------------|
+| **Linux**      | `~/.config/spicetify/Extensions` or `$XDG_CONFIG_HOME/.config/spicetify/Extensions/` |
+| **MacOS**      | `~/.config/spicetify/Extensions` or `$SPICETIFY_CONFIG/Extensions`                   |
+| **Windows**    | `%userprofile%/.spicetify/Extensions/`                                               |
 
-```console
-spicetify config extensions genre.js
+After putting the extension file into the correct folder, run the following command to install the extension:
+```
+spicetify config extensions hidePodcasts.js
 spicetify apply
 ```
+
+Enjoy !!
