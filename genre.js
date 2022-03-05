@@ -62,9 +62,9 @@
           span.innerText = genres.join(', ');
           span.style.fontSize = "11px";
           genreContainer.appendChild(span);
-
+          infoContainer = document.querySelector('div.main-trackInfo-container')
           infoContainer.appendChild(genreContainer);
-
+          
           // Save the new track
           playback = Player.data.playback_id
         }
