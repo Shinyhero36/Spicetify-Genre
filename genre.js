@@ -62,7 +62,8 @@
           span.innerText = genres.join(', ');
           span.style.fontSize = "11px";
           genreContainer.appendChild(span);
-          infoContainer = document.querySelector('div.main-trackInfo-container')
+          infoContainer = document.querySelector('div.main-trackInfo-container');
+          if(!infoContainer) cleanInjection();
           infoContainer.appendChild(genreContainer);
           
           // Save the new track
