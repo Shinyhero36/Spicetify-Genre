@@ -18,7 +18,7 @@ Copy genre.js into your Spicetify extensions directory:
 
 After putting the extension file into the correct folder, run the following command to install the extension:
 ```
-spicetify config extensions hidePodcasts.js
+spicetify config extensions genre.js
 spicetify apply
 ```
 
