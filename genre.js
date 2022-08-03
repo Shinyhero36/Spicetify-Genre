@@ -17,7 +17,12 @@
     return res.genres.slice(0, 3) // Only keep the first 3 genres
   };
 
-  const fetchPlaylist = async (genre) => {
+  /**
+   * Fetch playlist from The Sound of Spotify for a given genre
+   * @param {String} genre
+   * @return {String|null}
+   */
+  const fetchSoundOfSpotifyPlaylist = async (genre) => {
     const query = encodeURIComponent(`The Sound of ${genre}`);
     // Check localStorage for playlist
     const cached = localStorage.getItem(`everynoise:${query}`);
@@ -33,7 +38,7 @@
         localStorage.setItem(`everynoise:${genre}`, item.uri);
         return item.uri
       }
-     }
+    }
     return null;
   };
 
@@ -83,7 +88,7 @@
 
           for (const i in genres) {
             let element;
-            const uri = await fetchPlaylist(genres[i]);
+            const uri = await fetchSoundOfSpotifyPlaylist(genres[i]);
             if (uri !== null) {
               element = document.createElement('a');
               element.innerHTML = genres[i];
@@ -104,7 +109,7 @@
           infoContainer = document.querySelector('div.main-trackInfo-container');
           if(!infoContainer) cleanInjection();
           infoContainer.appendChild(genreContainer);
-          
+
         }
       } else {
         cleanInjection();
